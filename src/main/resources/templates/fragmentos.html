@@ -20,8 +20,8 @@
               </a>
             </li>
           </ul>
-          <div class="navbar-nav" sec:authorize="isAuthenticated()">
-				Bienvenido al Sistema  &nbsp; <span sec:authentication="name">Username</span>
+          <div class="nav-item" sec:authorize="isAuthenticated()">
+				Bienvenido al Sistema &nbsp; <span sec:authentication="name">Username</span>
 				&nbsp;
 				<b sec:authentication="principal.authorities">Rol</b>
 			</div>

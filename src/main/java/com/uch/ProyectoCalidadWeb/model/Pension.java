@@ -39,6 +39,14 @@ public class Pension {
 	
 	@Column
 	public String estado;
+
+	public int getId_pension() {
+		return id_pension;
+	}
+
+	public void setId_pension(int id_pension) {
+		this.id_pension = id_pension;
+	}
 	
 	
 	

@@ -27,4 +27,12 @@ public class ControllerPension {
         System.out.println(lista);
         return "listadoPensiones";
     }
+	
+	@GetMapping("/editarPen/{id}")
+	public String editar(@PathVariable("id") int id) {
+		servicePension.updatePen(id);
+		return "redirect:/Matriculas"; 
+		
+	}
+	 
 }

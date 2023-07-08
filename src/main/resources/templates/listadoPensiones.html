@@ -50,6 +50,7 @@
                       <tr> 
                    <!--    <th class="border-bottom-0">ID</th>  -->
                         <th class="border-bottom-0">Fecha de Vencimiento</th>
+                         <th class="border-bottom-0">Fecha de Operación</th>
                         <th class="border-bottom-0">Monto</th>
                         <th class="border-bottom-0">Estado</th>
                         <th class="border-bottom-0">Acciones</th>
@@ -57,8 +58,9 @@
                     </thead>
                     <tbody>
                       <tr    th:each="pension:${listaPensiones}">
-                           <!-- <td th:text="${pension.id_pension}"></td> --> 
+                           <!-- <td th:text="${pension.id_pension}"></td> -->
 					        <td class="border-bottom-0" th:text="${#dates.format(pension.fecha_vencimiento, 'dd-MM-yyyy')}"></td>
+					        <td class="border-bottom-0" th:text="${#dates.format(pension.fecha_operacion, 'dd-MM-yyyy')}"></td>
 					        <td class="border-bottom-0" th:text="${pension.monto}"></td>
 							<td class="border-bottom-0">
 							    <a th:if="${pension.fecha_vencimiento != null && pension.estado != 'Cancelado'}"
@@ -70,9 +72,11 @@
 							    ></a>
 							</td>
 							<td class="border-bottom-0">
-							  <a th:href="${pension.id_pension}" class="ti ti-printer btn btn-success"> Pagar</a>
+							 <a th:if="${pension.estado != 'Cancelado'}"
+							      th:href="@{/editarPen/} + ${pension.id_pension}" class="ti ti-printer btn btn-success" 
+							    >Pagar</a>
 						    </td> 
-                      </tr>
+                      </tr> 
                     </tbody>
                   </table>
                 </div>

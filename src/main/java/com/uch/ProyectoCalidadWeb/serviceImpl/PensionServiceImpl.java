@@ -23,7 +23,10 @@ public class PensionServiceImpl implements PensionService {
 	public List<Pension> buscarPorIdMatricula(int idmatricula) {
 	    return repository.findAllByMatriculaIdmatricula(idmatricula);
 	}
-	
 
+	@Override
+	public void updatePen(int idpension) {
+		repository.actualizarPen(idpension);
+	}
 
 }

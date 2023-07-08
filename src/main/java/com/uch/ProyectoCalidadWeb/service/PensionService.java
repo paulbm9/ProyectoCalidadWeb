@@ -8,4 +8,6 @@ import com.uch.ProyectoCalidadWeb.model.Pension;
 
 public interface PensionService {
 	 public List<Pension> buscarPorIdMatricula(int idmatricula);
+	 
+	 public void updatePen(int idpension);
 }

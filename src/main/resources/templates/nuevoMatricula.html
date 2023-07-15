@@ -54,7 +54,7 @@
                           <label for="DatosSecretaria" class="form-label">Datos Secretaria</label>
                           <select id="DatosSecretaria" th:field="*{secretaria}" class="form-select">
                             <option th:each="secreta:${listaSecretaria}" th:value="${secreta.idsecretaria}"
-                              th:text="${#strings.concat(secreta.nombre,' ',secreta.apePat)}" />
+                              th:text="${#strings.concat(secreta.nombre,' ',secreta.ape_pat)}" />
                           </select>
                         </div>
                       </div>

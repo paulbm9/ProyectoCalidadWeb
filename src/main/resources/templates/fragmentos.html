@@ -124,7 +124,7 @@
                 <span class="hide-menu">Salones</span>
               </a>
             </li>
-            <li sec:authorize="hasAnyAuthority('ADMIN','SECRETARIA')" class="sidebar-item">
+            <li sec:authorize="hasAnyAuthority('ADMIN','SECRETARIA', 'CAJERO')" class="sidebar-item">
               <a th:href="@{/Matriculas}" class="sidebar-link"  aria-expanded="false">
                 <span>
                   <i class="ti ti-abacus"></i>

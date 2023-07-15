@@ -53,7 +53,7 @@
                          <th class="border-bottom-0">Fecha de Operación</th>
                         <th class="border-bottom-0">Monto</th>
                         <th class="border-bottom-0">Estado</th>
-                        <th class="border-bottom-0">Acciones</th>
+                        <th sec:authorize="hasAnyAuthority('ADMIN' ,'CAJERO')" class="border-bottom-0">Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -66,14 +66,14 @@
 							    <a th:if="${pension.fecha_vencimiento != null && pension.estado != 'Cancelado'}"
 							       th:text="${pension.fecha_vencimiento.before(#dates.createNow()) ? 'DEUDA VENCIDA' : 'PENDIENTE'}"
 							       th:class="${pension.fecha_vencimiento != null && pension.fecha_vencimiento.before(#dates.createNow()) ? 'text-danger' : 'text-warning'}"
-							       class="ti-printer btn"></a>
+							       class="ti ti-printer btn"></a>
 							    <a th:if="${pension.estado == 'Cancelado'}"
 							       th:text="CANCELADO"
 							    ></a>
 							</td>
-							<td class="border-bottom-0">
+							<td sec:authorize="hasAnyAuthority('ADMIN' ,'CAJERO')" class="border-bottom-0">
 							 <a th:if="${pension.estado != 'Cancelado'}"
-							      th:href="@{/editarPen/} + ${pension.id_pension}" class="ti ti-printer btn btn-success" 
+							      th:href="@{/editarPen/} + ${pension.id_pension}" class="ti ti-brand-cashapp btn btn-success" 
 							    >Pagar</a>
 						    </td> 
                       </tr> 

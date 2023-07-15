@@ -3,172 +3,150 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Editar Docente</title>
+  <link rel="shortcut icon" type="image/png" href="/assets/images/logos/LogoBenjaminDark.png" />
+  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/styles.min.css}" />
   <!-- plugins:css -->
-  <link rel="stylesheet" th:href="@{/vendors/feather/feather.css}">
-  <link rel="stylesheet" th:href="@{/vendors/ti-icons/css/themify-icons.css}">
-  <link rel="stylesheet" th:href="@{/vendors/css/vendor.bundle.base.css}">
+  <link rel="stylesheet" th:href="@{/vendors/feather/feather.css}" />
+  <link rel="stylesheet" th:href="@{/vendors/ti-icons/css/themify-icons.css}" />
+  <link rel="stylesheet" th:href="@{/vendors/css/vendor.bundle.base.css}" />
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" th:href="@{/vendors/mdi/css/materialdesignicons.min.css}">
-  <link rel="stylesheet" th:href="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.css}">
-  <link rel="stylesheet" th:href="@{/vendors/ti-icons/css/themify-icons.css}">
-  <link rel="stylesheet" type="text/css" th:href="@{/js/select.dataTables.min.css}">
+  <link rel="stylesheet" th:href="@{/vendors/datatables.net-bs4/dataTables.bootstrap4.css}" />
+  <link rel="stylesheet" th:href="@{/vendors/ti-icons/css/themify-icons.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{/js/select.dataTables.min.css}" />
   <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" th:href="@{/css/vertical-layout-light/style.css}">
-  <!-- endinject -->
-  <link rel="shortcut icon" th:href="@{/images/favicon.png}" />
 </head>
-<body>
-  <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <div th:replace="fragmentos :: html_navbar"></div>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
-      <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="ti-settings"></i></div>
-        <div id="theme-settings" class="settings-panel">
-          <i class="settings-close ti-close"></i>
-          <p class="settings-heading">Barra Lateral Colores</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
-          <p class="settings-heading mt-2">Colores del Header</p>
-          <div class="color-tiles mx-0 px-4">
-            <div class="tiles success"></div>
-            <div class="tiles warning"></div>
-            <div class="tiles danger"></div>
-            <div class="tiles info"></div>
-            <div class="tiles dark"></div>
-            <div class="tiles default"></div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
-      <div th:replace="fragmentos :: html_sidebar"></div>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          
-          <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="container" >
-	<h2>Editar Docente</h2>
-	<form class="row g-3" name="frmnuevo" method="post"  autocomplete="off" th:action="@{/actualizardoc}" th:object="${docente}">
-	<div class="col-md-12">
-	<label>ID</label><br>
-	<input type="text" th:field="*{iddocente}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>Nombre</label><br>
-	<input type="text" th:field="*{nombre}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>ApellidoPaterno</label><br>
-	<input type="text" th:field="*{apepat}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>ApellidoMaterno</label><br>
-	<input type="text" th:field="*{apemat}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>FechaNacimiento</label><br>
-	<input type="date" th:field="*{fechadenac}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>Telefono</label><br>
-	<input type="number" th:field="*{telefono}"  class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>Correo</label><br>
-	<input type="email" th:field="*{correo}"  class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>FechaIniContrato</label><br>
-	<input type="date" th:field="*{fechadeinicontrat}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>FechaFinContrato</label><br>
-	<input type="date" th:field="*{fechadefincontrat}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-4">
-	<label>Sueldo</label><br>
-	<input type="number" th:field="*{sueldo}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-6">
-	<label>Direccion</label><br>
-	<input type="text" th:field="*{direccion}" required="required" class="form-control"><br>
-	</div>
-	<div class="col-md-6">
-	<label>Distrito</label><br>
-	<select id="distrito" th:field="*{distrito}"  class="form-control">
-		<option value="SMP">SMP</option>
-		<option value="Los Olivos">Los Olivos</option>
-		<option value="Callao">Callao</option>
-		<option value="Independencia">Independencia</option>
-		<option value="Comas">Comas</option>
-		</select>
-	</div>
-	<div class="col-md-12">
-	<label>Estado</label>
-	  <select class="form-select"  th:field="*{estado}" name="estado">
-	    <option th:value="0" selected>Seleccionar</option>
-	    <option th:value="A">ACTIVO</option>
-	    <option th:value="I">INACTIVO</option>
-	  </select>		
-	  </div>	
-	<input type="submit" value="Actualizar" class="btn btn-primary">
-	</form>
-			</div>
 
-                
+<body>
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- partial:partials/_sidebar.html -->
+    <div th:replace="fragmentos :: html_sidebar"></div>
+    <!-- partial -->
+    <div class="body-wrapper">
+      <!-- partial:partials/_navbar.html -->
+      <div th:replace="fragmentos :: html_navbar"></div>
+      <!-- partial -->
+      <div class="container-fluid">
+        <!-- Row 1 -->
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold mb-4">Editar Docente</h5>
+              <div class="card">
+                <div class="card-body">
+                  <form name="frmnuevo" method="post" autocomplete="off" th:action="@{/actualizardoc}"
+                  th:object="${docente}">
+                    <div class="row d-none">
+                      <div class="col-md-12">
+                        <div class="mb-3">
+                          <label for="ID" class="form-label">ID</label>
+                          <input type="text" id="ID" th:field="*{iddocente}" class="form-control" readonly="readonly"
+                            aria-describedby="ID">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="Nombre" class="form-label">Nombre</label>
+                          <input type="text" id="Nombre" th:field="*{nombre}" required="required" class="form-control"
+                            aria-describedby="Nombre">
+                        </div>
+                        <div class="mb-3">
+                          <label for="ApePat" class="form-label">Apellido Paterno</label>
+                          <input type="text" id="ApePat" th:field="*{apepat}" required="required" class="form-control"
+                            aria-describedby="ApePat">
+                        </div>
+                        <div class="mb-3">
+                          <label for="ApeMat" class="form-label">Apellido Materno</label>
+                          <input type="text" id="ApeMat" th:field="*{apemat}" required="required" class="form-control"
+                            aria-describedby="ApeMat">
+                        </div>
+                        <div class="mb-3">
+                          <label for="FechaDeNacimiento" class="form-label">Fecha de Nacimiento</label>
+                          <input type="date" id="FechaDeNacimiento" th:field="*{fechadenac}" class="form-control" required="required"
+                            aria-describedby="FechaDeNacimiento">
+                        </div>
+                        <div class="mb-3">
+                          <label for="Telefono" class="form-label">Telefono</label>
+                          <input type="number" id="Telefono" th:field="*{telefono}" class="form-control"
+                            aria-describedby="Telefono">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Status</label>
+                          <select class="form-select" th:field="*{estado}" name="estado">
+                            <option th:value="0" selected>Seleccionar</option>
+                            <option th:value="Activo">ACTIVO</option>
+                            <option th:value="Inactivo">INACTIVO</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="InicioContrato" class="form-label">Inicio Contrato</label>
+                          <input type="date" id="InicioContrato" th:field="*{fechadeinicontrat}" required="required"
+                            class="form-control" aria-describedby="InicioContrato">
+                        </div>
+                        <div class="mb-3">
+                          <label for="FinContrato" class="form-label">Fin Contrato</label>
+                          <input type="date" id="FinContrato" th:field="*{fechadefincontrat}" required="required"
+                            class="form-control" aria-describedby="FinContrato">
+                        </div>
+                        <div class="mb-3">
+                          <label for="Sueldo" class="form-label">Sueldo</label>
+                          <input type="number" id="Sueldo" th:field="*{sueldo}" step="100" required="required"
+                            class="form-control" aria-describedby="Sueldo">
+                        </div>
+                        <div class="mb-3">
+                          <label for="Correo" class="form-label">Correo</label>
+                          <input type="email" id="Correo" th:field="*{correo}" class="form-control"
+                            aria-describedby="Correo">
+                        </div>
+                        <div class="mb-3">
+                          <label for="Direccion" class="form-label">Direccion</label>
+                          <input type="text" id="Direccion" th:field="*{direccion}" required="required"
+                            class="form-control" aria-describedby="Direccion">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Distrito</label><br>
+                          <select id="distrito" th:field="*{distrito}" class="form-select">
+                            <option value="SMP">SMP</option>
+                            <option value="Los Olivos">Los Olivos</option>
+                            <option value="Callao">Callao</option>
+                            <option value="Independencia">Independencia</option>
+                            <option value="Comas">Comas</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
-          
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023. Todos los derechos reservados.</span>
-          </div>
-          
-        </footer> 
-        <!-- partial -->
+        <footer class="py-6 px-6 text-center">
+          <p class="mb-0 fs-4">
+            Los 4 Compitas Copyright © 2023. Todos los derechos reservados.
+          </p>
+        </footer>
       </div>
-      <!-- main-panel ends -->
-    </div>   
-    <!-- page-body-wrapper ends -->
+    </div>
   </div>
-  <!-- container-scroller -->
-
   <!-- plugins:js -->
-  <script src="/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="/vendors/chart.js/Chart.min.js"></script>
-  <script src="/vendors/datatables.net/jquery.dataTables.js"></script>
-  <script src="/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script src="/js/dataTables.select.min.js"></script>
-
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="/js/off-canvas.js"></script>
-  <script src="/js/hoverable-collapse.js"></script>
-  <script src="/js/template.js"></script>
-  <script src="/js/settings.js"></script>
-  <script src="/js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="/js/dashboard.js"></script>
-  <script src="/js/Chart.roundedBarCharts.js"></script>
+  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/sidebarmenu.js"></script>
+  <script src="/assets/js/app.min.js"></script>
+  <script src="/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+  <script src="/assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="/assets/js/dashboard.js"></script>
   <!-- End custom js for this page-->
 </body>
 
 </html>
-

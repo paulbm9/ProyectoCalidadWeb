@@ -24,9 +24,9 @@ public class SecretariaDaoImp implements ISecretariaDao{
 
 	@Override
 	public int save(Secretaria sec) {
- String sql= "insert into secretaria(nombre,apePat,apeMat,fechadeNac,telefono,correo,fechadeIniContrat,fechadeFinContrat,sueldo,direccion,distrito,estado)values(?,?,?,?,?,?,?,?,?,?,?,?)";
+ String sql= "insert into secretaria(nombre,ape_pat,ape_mat,fecha_nac,telefono,correo,fechade_ini_contrat,fechade_fin_contrat,sueldo,direccion,distrito,estado)values(?,?,?,?,?,?,?,?,?,?,?,?)";
 		
-		return jdbc.update(sql,sec.getNombre(),sec.getApePat(),sec.getApeMat(),sec.getFechadeNac(),sec.getTelefono(),sec.getCorreo(),sec.getFechadeIniContrat(),sec.getFechadeFinContrat(),sec.getSueldo(),sec.getDireccion(),sec.getDistrito(),sec.getEstado());
+		return jdbc.update(sql,sec.getNombre(),sec.getApe_pat(),sec.getApe_mat(),sec.getFecha_nac(),sec.getTelefono(),sec.getCorreo(),sec.getFechade_ini_contrat(),sec.getFechade_fin_contrat(),sec.getSueldo(),sec.getDireccion(),sec.getDistrito(),sec.getEstado());
 		
 	}
 
@@ -47,9 +47,9 @@ public class SecretariaDaoImp implements ISecretariaDao{
 
 	@Override
 	public int update(Secretaria sec) {
-     String sql= "update secretaria set nombre=?, apePat=?, apeMat=?, fechadeNac=?, telefono=?, correo=?, fechadeIniContrat=?, fechadeFinContrat=?, sueldo=?, direccion=?, distrito=?, estado=? where idsecretaria=?";
+     String sql= "update secretaria set nombre=?, ape_pat=?, ape_mat=?, fecha_nac=?, telefono=?, correo=?, fechade_ini_contrat=?, fechade_fin_contrat=?, sueldo=?, direccion=?, distrito=?, estado=? where idsecretaria=?";
 		
-		return jdbc.update(sql,sec.getNombre(),sec.getApePat(),sec.getApeMat(),sec.getFechadeNac(),sec.getTelefono(),sec.getCorreo(),sec.getFechadeIniContrat(),sec.getFechadeFinContrat(),sec.getSueldo(),sec.getDireccion(),sec.getDistrito(),sec.getEstado(),sec.getIdsecretaria());
+		return jdbc.update(sql,sec.getNombre(),sec.getApe_pat(),sec.getApe_mat(),sec.getFecha_nac(),sec.getTelefono(),sec.getCorreo(),sec.getFechade_ini_contrat(),sec.getFechade_fin_contrat(),sec.getSueldo(),sec.getDireccion(),sec.getDistrito(),sec.getEstado(),sec.getIdsecretaria());
 	}
 
 	

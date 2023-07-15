@@ -27,7 +27,7 @@ public class SalonServiceImpl implements SalonService{
 
 	@Override
 	public void guardar(Salon sal) {
-		repository.guardarProcedure(sal.getEstado(), sal.getSeccion(), sal.getAnio(), sal.getGrado(), sal.getDocente().getIddocente());
+		repository.guardarProcedure(sal.getEstado(), sal.getSeccion(), sal.getAnio(), sal.getGrado(),sal.getVacantes(), sal.getDocente().getIddocente());
 		
 	}
 
@@ -40,7 +40,7 @@ public class SalonServiceImpl implements SalonService{
 
 	@Override
 	public void update(Salon sal) {
-		repository.actualizarProcedure(sal.getIdsalon(), sal.getEstado(), sal.getSeccion(), sal.getAnio(), sal.getGrado(), sal.getDocente().getIddocente());
+		repository.actualizarProcedure(sal.getIdsalon(), sal.getEstado(), sal.getSeccion(), sal.getAnio(), sal.getGrado(),sal.getVacantes(), sal.getDocente().getIddocente());
 		
 	}
 

@@ -19,24 +19,26 @@ public interface SalonRepository extends JpaRepository<Salon, Integer>{
 	
 	@Transactional
 	@Modifying
-	@Query(value = "{call usp_insert_salon(:s_estado, :s_seccion, :s_anio, :s_grado, :s_iddoc)}", nativeQuery = true)
+	@Query(value = "{call usp_insert_salon(:s_estado, :s_seccion, :s_anio, :s_grado, :s_vacantes, :s_iddoc)}", nativeQuery = true)
 	public void guardarProcedure(
 			@Param("s_estado")String s_estado,
 			@Param("s_seccion")String s_seccion,
 			@Param("s_anio")String s_anio,
 			@Param("s_grado")String s_grado,
+			@Param("s_vacantes") int s_vacantes,
 			@Param("s_iddoc")int s_iddoc
 			);
 	
 	@Transactional
 	@Modifying
-	@Query(value = "{call usp_update_salon(:s_idsalon, :s_estado, :s_seccion, :s_anio, :s_grado, :s_iddocente)}", nativeQuery = true)
+	@Query(value = "{call usp_update_salon(:s_idsalon, :s_estado, :s_seccion, :s_anio, :s_grado, :s_vacantes , :s_iddocente)}", nativeQuery = true)
 	public void actualizarProcedure(
 			@Param("s_idsalon") int s_idsalon,
 			@Param("s_estado") String s_estado,
 			@Param("s_seccion") String s_seccion,
 			@Param("s_anio") String s_anio,
 			@Param("s_grado") String s_grado,
+			@Param("s_vacantes") int s_vacantes,
 			@Param("s_iddocente") int s_iddocente
 			);
 	

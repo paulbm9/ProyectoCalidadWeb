@@ -47,36 +47,36 @@
                 <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">
                     <thead>
-                      <tr> 
-                   <!--    <th class="border-bottom-0">ID</th>  -->
+                      <tr>
+                        <!--    <th class="border-bottom-0">ID</th>  -->
                         <th class="border-bottom-0">Fecha de Vencimiento</th>
-                         <th class="border-bottom-0">Fecha de Operación</th>
+                        <th class="border-bottom-0">Fecha de Operación</th>
                         <th class="border-bottom-0">Monto</th>
                         <th class="border-bottom-0">Estado</th>
                         <th sec:authorize="hasAnyAuthority('ADMIN' ,'CAJERO')" class="border-bottom-0">Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr    th:each="pension:${listaPensiones}">
-                           <!-- <td th:text="${pension.id_pension}"></td> -->
-					        <td class="border-bottom-0" th:text="${#dates.format(pension.fecha_vencimiento, 'dd-MM-yyyy')}"></td>
-					        <td class="border-bottom-0" th:text="${#dates.format(pension.fecha_operacion, 'dd-MM-yyyy')}"></td>
-					        <td class="border-bottom-0" th:text="${pension.monto}"></td>
-							<td class="border-bottom-0">
-							    <a th:if="${pension.fecha_vencimiento != null && pension.estado != 'Cancelado'}"
-							       th:text="${pension.fecha_vencimiento.before(#dates.createNow()) ? 'DEUDA VENCIDA' : 'PENDIENTE'}"
-							       th:class="${pension.fecha_vencimiento != null && pension.fecha_vencimiento.before(#dates.createNow()) ? 'text-danger' : 'text-warning'}"
-							       class="ti ti-printer btn"></a>
-							    <a th:if="${pension.estado == 'Cancelado'}"
-							       th:text="CANCELADO"
-							    ></a>
-							</td>
-							<td sec:authorize="hasAnyAuthority('ADMIN' ,'CAJERO')" class="border-bottom-0">
-							 <a th:if="${pension.estado != 'Cancelado'}"
-							      th:href="@{/editarPen/} + ${pension.id_pension}" class="ti ti-brand-cashapp btn btn-success" 
-							    >Pagar</a>
-						    </td> 
-                      </tr> 
+                      <tr th:each="pension:${listaPensiones}">
+                        <!-- <td th:text="${pension.id_pension}"></td> -->
+                        <td class="border-bottom-0" th:text="${#dates.format(pension.fecha_vencimiento, 'dd-MM-yyyy')}">
+                        </td>
+                        <td class="border-bottom-0" th:text="${#dates.format(pension.fecha_operacion, 'dd-MM-yyyy')}">
+                        </td>
+                        <td class="border-bottom-0" th:text="${pension.monto}"></td>
+                        <td class="border-bottom-0">
+                          <span th:if="${pension.fecha_vencimiento != null && pension.estado != 'Cancelado'}"
+                            th:text="${pension.fecha_vencimiento.before(#dates.createNow()) ? 'DEUDA VENCIDA' : 'PENDIENTE'}"
+                            th:class="${pension.fecha_vencimiento != null && pension.fecha_vencimiento.before(#dates.createNow()) ? 'badge bg-danger rounded-3 fw-semibold' : 'badge bg-primary rounded-3 fw-semibold'}"
+                            class="ti ti-printer btn"></span>
+                          <span th:if="${pension.estado == 'Cancelado'}" th:text="CANCELADO"
+                            th:class="'badge bg-success rounded-3 fw-semibold'"></span>
+                        </td>
+                        <td sec:authorize="hasAnyAuthority('ADMIN' ,'CAJERO')" class="border-bottom-0">
+                          <a th:if="${pension.estado != 'Cancelado'}" th:href="@{/editarPen/} + ${pension.id_pension}"
+                            class="ti ti-brand-cashapp btn btn-success">Pagar</a>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>

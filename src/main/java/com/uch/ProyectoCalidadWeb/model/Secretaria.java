@@ -19,19 +19,19 @@ public class Secretaria {
 	@Column
 	private String nombre;
 	@Column
-	private String apePat;
+	private String ape_pat;
 	@Column
-	private String apeMat;
+	private String ape_mat;
 	@Column
-	private String fechadeNac;
+	private String fecha_nac;
 	@Column
 	private String telefono;
 	@Column
 	private String correo;
 	@Column
-	private String fechadeIniContrat;
+	private String fechade_ini_contrat;
 	@Column
-	private String fechadeFinContrat;
+	private String fechade_fin_contrat;
 	@Column
 	private double sueldo;
 	@Column
@@ -48,26 +48,28 @@ public class Secretaria {
 		
 	}
 
-
-
-	public Secretaria(int idsecretaria, String nombre, String apePat, String apeMat, String fechadeNac, String telefono,
-			String correo, String fechadeInitContrat, String fechadeFinContrat, double sueldo, String direccion,
-			String distrito, String estado) {
+	public Secretaria(int idsecretaria, String nombre, String ape_pat, String ape_mat, String fecha_nac,
+			String telefono, String correo, String fechade_ini_contrat, String fechade_fin_contrat, double sueldo,
+			String direccion, String distrito, String estado) {
 		super();
 		this.idsecretaria = idsecretaria;
 		this.nombre = nombre;
-		this.apePat = apePat;
-		this.apeMat = apeMat;
-		this.fechadeNac = fechadeNac;
+		this.ape_pat = ape_pat;
+		this.ape_mat = ape_mat;
+		this.fecha_nac = fecha_nac;
 		this.telefono = telefono;
 		this.correo = correo;
-		this.fechadeIniContrat = fechadeInitContrat;
-		this.fechadeFinContrat = fechadeFinContrat;
+		this.fechade_ini_contrat = fechade_ini_contrat;
+		this.fechade_fin_contrat = fechade_fin_contrat;
 		this.sueldo = sueldo;
 		this.direccion = direccion;
 		this.distrito = distrito;
 		this.estado = estado;
 	}
+
+
+
+
 
 
 
@@ -77,9 +79,17 @@ public class Secretaria {
 
 
 
-	public void setIdSecretaria(int idsecretaria) {
+
+
+
+
+	public void setIdsecretaria(int idsecretaria) {
 		this.idsecretaria = idsecretaria;
 	}
+
+
+
+
 
 
 
@@ -89,45 +99,77 @@ public class Secretaria {
 
 
 
+
+
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
 
 
-	public String getApePat() {
-		return apePat;
+
+
+
+
+	public String getApe_pat() {
+		return ape_pat;
 	}
 
 
 
-	public void setApePat(String apePat) {
-		this.apePat = apePat;
+
+
+
+
+	public void setApe_pat(String ape_pat) {
+		this.ape_pat = ape_pat;
 	}
 
 
 
-	public String getApeMat() {
-		return apeMat;
+
+
+
+
+	public String getApe_mat() {
+		return ape_mat;
 	}
 
 
 
-	public void setApeMat(String apeMat) {
-		this.apeMat = apeMat;
+
+
+
+
+	public void setApe_mat(String ape_mat) {
+		this.ape_mat = ape_mat;
 	}
 
 
 
-	public String getFechadeNac() {
-		return fechadeNac;
+
+
+
+
+	public String getFecha_nac() {
+		return fecha_nac;
 	}
 
 
 
-	public void setFechadeNac(String fechadeNac) {
-		this.fechadeNac = fechadeNac;
+
+
+
+
+	public void setFecha_nac(String fecha_nac) {
+		this.fecha_nac = fecha_nac;
 	}
+
+
+
+
 
 
 
@@ -137,9 +179,17 @@ public class Secretaria {
 
 
 
+
+
+
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
+
+
+
 
 
 
@@ -149,33 +199,57 @@ public class Secretaria {
 
 
 
+
+
+
+
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
 
 
 
-	public String getFechadeIniContrat() {
-		return fechadeIniContrat;
+
+
+
+
+	public String getFechade_ini_contrat() {
+		return fechade_ini_contrat;
 	}
 
 
 
-	public void setFechadeIniContrat(String fechadeIniContrat) {
-		this.fechadeIniContrat = fechadeIniContrat;
+
+
+
+
+	public void setFechade_ini_contrat(String fechade_ini_contrat) {
+		this.fechade_ini_contrat = fechade_ini_contrat;
 	}
 
 
 
-	public String getFechadeFinContrat() {
-		return fechadeFinContrat;
+
+
+
+
+	public String getFechade_fin_contrat() {
+		return fechade_fin_contrat;
 	}
 
 
 
-	public void setFechadeFinContrat(String fechadeFinContrat) {
-		this.fechadeFinContrat = fechadeFinContrat;
+
+
+
+
+	public void setFechade_fin_contrat(String fechade_fin_contrat) {
+		this.fechade_fin_contrat = fechade_fin_contrat;
 	}
+
+
+
+
 
 
 
@@ -185,9 +259,17 @@ public class Secretaria {
 
 
 
+
+
+
+
 	public void setSueldo(double sueldo) {
 		this.sueldo = sueldo;
 	}
+
+
+
+
 
 
 
@@ -197,9 +279,17 @@ public class Secretaria {
 
 
 
+
+
+
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+
+
+
+
 
 
 
@@ -209,9 +299,17 @@ public class Secretaria {
 
 
 
+
+
+
+
 	public void setDistrito(String distrito) {
 		this.distrito = distrito;
 	}
+
+
+
+
 
 
 
@@ -221,9 +319,19 @@ public class Secretaria {
 
 
 
+
+
+
+
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
+
+
+
+
+
 	
 	
 	
